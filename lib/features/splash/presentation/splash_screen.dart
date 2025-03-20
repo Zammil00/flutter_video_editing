@@ -1,8 +1,27 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen extends StatelessWidget {
+import '../../home/presentation/home_screen.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    Timer(Duration(seconds: 3), ()
+    {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +31,13 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/logo.jpg'),
+            AnimatedScale(
+              scale: -1,
+                duration: Duration(seconds: 3),
+                child: Image.asset('assets/images/logo.jpg')),
             SizedBox(height: 15),
             Text('NARAKISAH STUDIO', style: GoogleFonts.montserrat(
-              fontSize: 25,fontWeight: FontWeight.bold,
-            )
+              fontSize: 25,fontWeight: FontWeight.bold,)
             ),
           ],
         ),
