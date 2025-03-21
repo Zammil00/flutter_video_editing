@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:labil_video_editing/features/editor/presentation/video_editor_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,18 +14,30 @@ class HomeScreen extends StatelessWidget {
 
       ),
       body: Center(
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15)
+                ),
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => VideoEditorScreen(),
+                      )
+                  );
+                },
+                child: Text('Proyek Baru'),
             ),
-            onPressed: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VideoEditorScreen(),
-                  )
-              );
-            },
-            child: Text('Proyek Baru'),
+            SizedBox(height: 30,),
+            Text("PROYEK KAMU", style: GoogleFonts.montserrat(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.blueGrey,)
+            ),
+          ],
         ),
       ),
     );

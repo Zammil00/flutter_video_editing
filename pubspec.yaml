@@ -37,9 +37,11 @@ dependencies:
   image_picker: ^1.1.2
   video_player: ^2.9.3
   video_editor: ^3.0.0
-  ffmpeg_kit_flutter: ^6.0.3
+  media_kit: ^1.1.11
   path_provider: ^2.1.5
   google_fonts: ^6.0.0
+  video_thumbnail: ^0.5.3
+
 
 
 dev_dependencies:
